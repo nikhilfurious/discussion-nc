@@ -1,0 +1,75 @@
+.mt-70{
+  margin-top: 70px;
+}
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .trigger:hover {
+    color: #1890ff;
+  }
+
+  .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
+
+  nz-header {
+    background: #fff;
+    padding: 0;
+  }
+
+  nz-content {
+    margin: 0 16px;
+  }
+
+  nz-breadcrumb {
+    margin: 16px 0;
+  }
+
+  .inner-content {
+    padding: 24px;
+    background: #fff;
+    min-height: 360px;
+  }
+
+  nz-footer {
+    text-align: center;
+  }
+
+  .mobile-sidenav-styles{
+    position: fixed;
+    background: white;
+    box-shadow: 0 0 7px #c2c2c2;
+    width: 360px;
+    height: calc(100vh - 60px);
+    z-index: 99;
+    top: 64px;
+  }
+
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+ }
+ 
+ @-webkit-keyframes fadeIn {
+    0% {opacity: 0; left: -92%;}
+    100% {opacity: 1; left: 0;}
+ }
+ 
+ @keyframes fadeIn {
+  0% {opacity: 0; left: -92%;}
+  100% {opacity: 1; left: 0;}
+ }
+ 
+ .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+ }

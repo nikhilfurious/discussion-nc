@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'discussion-forum'`, () => {
+  it(`should have as title 'Discussion-forum'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('discussion-forum');
+    expect(app.title).toEqual('Discussion-forum');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('discussion-forum app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Discussion-forum app is running!');
   });
 });

@@ -1,0 +1,167 @@
+<div class="w-full ps-4 pe-4 pt-4 d-mflex">
+    <h2 class="text-info">
+        <nz-breadcrumb>
+            <nz-breadcrumb-item>
+                <a [routerLink]="['/']">Questions</a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>{{dataService.selectedQuestionType}}</nz-breadcrumb-item>
+            <nz-breadcrumb-item>{{'Q.No ' + dataService.selectedQuestion.Q_No}}</nz-breadcrumb-item>
+        </nz-breadcrumb>
+    </h2>
+</div>
+<hr>
+<div class="w-full page-structure flex flex-col lg:flex-row">
+    <div class="w-full lg:w-8/12">
+        <div class="w-full pe-lg-3">
+            <div class="white-container-with-shadow position-relative">
+                <div class="w-full flex">
+                    <div class="">
+                        <img class="profile-image" src="../../assets/profile-pic.jpg" alt="">
+                    </div>
+                    <div class="ps-3">
+                        <h5>{{dataService.selectedQuestion.title}}</h5>
+                        <div class="flex align-items-center fs-13">
+                            Created By <span class="text-primary ps-2 pe-3">{{ &nbsp; 'Mary'}}</span>
+                            Created Time<span class="text-primary ps-2">{{&nbsp;
+                                dataService.selectedQuestion.createdTime}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex mt-5 justify-content-between">
+                    <h5 class="text-success"> Answers </h5>
+                </div>
+
+                <div class="w-full">
+                    <textarea nz-input placeholder="Add Your Answer"
+                        [nzAutosize]="{ minRows: 3 }"></textarea>
+                </div>
+
+                <div class="w-full" *ngFor="let item of answers; let i = index">
+                    <div class="w-full flex mt-4">
+                        <div class="">
+                            <img class="profile-image-short" src="https://xsgames.co/randomusers/avatar.php?g=male"
+                                alt="">
+                        </div>
+                        <div class="ps-3">
+                            <div class="flex align-items-center fs-13">
+                                <div>
+                                    Answered By <span class="text-primary ps-2 pe-3">{{ &nbsp; 'John'}}</span>
+                                </div>
+                                <div>
+                                    Answered Time<span class="text-primary ps-2">{{&nbsp;
+                                        dataService.selectedQuestion.createdTime}}</span>
+                                </div>
+                                <div *ngIf="i == 0" class="text-success ps-3 fs-6">
+                                    <button class="btn btn-success">Best Answer</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="w-full mt-3">
+                        An SPA (Single-page application) is a web app implementation that loads only a single web
+                        document, and then updates the body content of that single document via JavaScript APIs such as
+                        XMLHttpRequest and Fetch when different content is to be shown.
+
+                        This therefore allows users to use websites without loading whole new pages from the server,
+                        which can result in performance gains and a more dynamic experience, with some tradeoff
+                        disadvantages such as SEO, more effort required to maintain state, implement navigation, and do
+                        meaningful performance monitoring.
+                    </div>
+                    <div class="w-full flex">
+                        <div class="flex align-items-end">
+                            <button class="background-transparent"><span nz-icon nzType="like"
+                                    nzTheme="outline"></span></button>
+                            22 Likes
+                        </div>
+                        <div class="flex align-items-end">
+                            <button class="background-transparent"><span nz-icon nzType="dislike"
+                                    nzTheme="outline"></span></button>
+                            2 Dislikes
+                        </div>
+                        <div class="flex align-items-end">
+                            <button class="background-transparent"><span nz-icon nzType="comment"
+                                    nzTheme="outline"></span></button>
+                            29 Comments
+                        </div>
+                    </div>
+                    <div class="w-full mt-4">
+                        <h6>Comments</h6>
+                        <hr>
+                        <div class="flex gap-2">
+                            <textarea class="col-9 pe-2" nz-input placeholder="Add your comment" nzAutosize></textarea>
+                            <button class="col-3 btn btn-success">Submit</button>
+                        </div>
+                        <div class="flex pt-3 align-items-center" *ngFor="let item of comments">
+                            <div>
+                                <img class="profile-image-short"
+                                    src="https://xsgames.co/randomusers/avatar.php?g=female" alt="">
+                            </div>
+                            <div class="ps-2">
+                                <div class="fs-13 text-bold">Mary, commented on 12-01-2023</div>
+                                <div>{{item.comment}} </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full lg:w-4/12">
+        <div class="w-full ps-lg-3">
+            <div class="w-full white-container-with-shadow">
+                <h5 class="text-info">Categories</h5>
+                <hr>
+                <div *ngFor="let item of categoryInfo">
+                    <div class="flex justify-content-between">
+                        <span class="text-success">{{item.category}}</span>
+                        <b class="text-danger">{{item.threads}}</b>
+                    </div>
+                    <hr class="border-primary">
+                </div>
+            </div>
+
+            <div class="w-full p-3 border mt-3 white-container-with-shadow">
+                <h5 class="text-info">Top Users of the Week</h5>
+                <hr>
+                <div *ngFor="let item of topUsers"
+                    class="white-container border-bottom flex justify-content-between position-relative">
+                    <div class="flex">
+                        <div class="">
+                            <img class="profile-image" [src]="item.profilePic" alt="">
+                        </div>
+                        <div class="ps-lg-4">
+                            <h5>{{item.name}}</h5>
+                            <div class="flex align-items-center text-success">
+                                {{'Since '+item.joinedYear}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="justify-self-right flex align-items-center text-gold">
+                        <span nz-icon nzType="pound" nzTheme="outline"></span>
+                        {{item.points}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full p-3 border mt-3 white-container-with-shadow">
+                <h5 class="text-info">Hot Questions</h5>
+                <hr>
+                <div *ngFor="let item of hotQuestions"
+                    class="white-container border-bottom flex justify-content-between position-relative">
+                    <div class="w-full flex">
+                        <div class="w-full">
+                            <h6>{{item.question}}</h6>
+                            <div class="w-full flex">
+                                <span class="w-6/12 text-success">{{item.name}}</span>
+                                <span class="w-6/12 text-end text-danger">{{item.answers + ' Answers'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

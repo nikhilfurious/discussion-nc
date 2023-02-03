@@ -1,0 +1,67 @@
+<div class="w-full page-structure flex flex-col lg:flex-row">
+    <div class="w-fulllg:grid-cols-8">
+        <div class="w-full pe-lg-4">
+            <div *ngFor="let i of [1,2,34,5,6,7,78,2]"
+                class="white-container flex flex-col lg:flex-row position-relative">
+                <div class="">
+                    <img class="profile-image" src="../../assets/profile-pic.jpg" alt="">
+                </div>
+                <div class="ps-lg-4">
+                    <h5>Publising my work without advisor</h5>
+                    <div class="flex align-items-center">
+                        <span class="pe-1" nz-icon nzType="mail" nzTheme="outline"></span>
+                        0 Answers
+
+                        <span class="pe-1 ps-3" nz-icon nzType="arrow-up" nzTheme="outline"></span>
+                        0 Votes
+
+                        <span class="pe-1 ps-3" nz-icon nzType="eye" nzTheme="outline"></span>
+                        0 Views
+                    </div>
+                    <div class="mt-3">
+                        <button class="button-tags me-2">
+                            publications
+                        </button>
+                        <button class="button-tags me-2">
+                            author
+                        </button>
+                        <button class="button-tags me-2">
+                            advisor
+                        </button>
+                    </div>
+                </div>
+                <div class="timings">Asked 23m ago</div>
+            </div>
+        </div>
+    </div>
+    <div class="w-fulllg:grid-cols-4">
+        <div class="w-full ps-lg-4">
+            <div class="w-full empty-box border">
+                Contents yet to be added
+            </div>
+
+            <div class="w-full p-3 border mt-3">
+                <h5>Top Users of the Week</h5>
+                <hr>
+                <div *ngFor="let i of [1,2,34,5,6,7,78,2]"
+                    class="white-container flex justify-content-between position-relative">
+                    <div class="flex">
+                        <div class="">
+                            <img class="profile-image" src="../../assets/profile-pic.jpg" alt="">
+                        </div>
+                        <div class="ps-lg-4">
+                            <h5>Simoka</h5>
+                            <div class="flex align-items-center">
+                                Since 2019
+                            </div>
+                        </div>
+                    </div>
+                    <div class="justify-self-right flex align-items-center">
+                        <span nz-icon nzType="pound" nzTheme="outline"></span>
+                        2132
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

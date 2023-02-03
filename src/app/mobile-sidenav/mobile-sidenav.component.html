@@ -1,0 +1,30 @@
+<div class="w-full sidenav-main bg-light">
+    <div (click)="toggleQuestionOptions()" class="flex align-items-center ps-3 pe-3 pt-2 pb-2 fs-5 pointer">
+        <span nz-icon nzType="question-circle" nzTheme="outline"></span>
+        <span class="ps-2">Questions</span>
+    </div>
+    <div [ngStyle]="{'height':questionsHeight+'px', 'overflow':'hidden'}" class="">
+        <ul class="fs-6">
+            <div routerLink="/" (click)="selectedQuestionType('All Questions')" [ngClass]="dataService.selectedQuestionType === 'All Questions' ? 'text-primary':''" class="pb-1 submenu-buttons pointer">All Questions</div>
+            <div routerLink="/" (click)="selectedQuestionType('Recent Questions')" [ngClass]="dataService.selectedQuestionType === 'Recent Questions' ? 'text-primary':''" class="pb-1 submenu-buttons pointer">Recent Questions</div>
+            <div routerLink="/" (click)="selectedQuestionType('Most Viewed Questions')" [ngClass]="dataService.selectedQuestionType === 'Most Viewed Questions' ? 'text-primary':''" class="pb-1 submenu-buttons pointer">Most Viewed Questions</div>
+            <div routerLink="/" (click)="selectedQuestionType('Most Answered Questions')" [ngClass]="dataService.selectedQuestionType === 'Most Answered Questions' ? 'text-primary':''" class="pb-1 submenu-buttons pointer">Most Answered Questions</div>
+        </ul>
+    </div>
+    <div (click)="togglePostsOptions()" class="flex align-items-center ps-3 pe-3 pt-2 pb-2 fs-5 pointer">
+        <span nz-icon nzType="book" nzTheme="outline"></span>
+        <span class="ps-2">Posts</span>
+    </div>
+    <div [ngStyle]="{'height':postsHeight+'px', 'overflow':'hidden'}">
+        <ul class="fs-6">
+            <div class="pb-1 submenu-buttons pointer">Recent Posts</div>
+            <div class="pb-1 submenu-buttons pointer">Most Viewed Posts</div>
+            <div class="pb-1 submenu-buttons pointer">Top Posts</div>
+            <div class="pb-1 submenu-buttons pointer">Most Answered Posts</div>
+        </ul>
+    </div>
+    <div class="flex align-items-center ps-3 pe-3 pt-2 pb-2 fs-5 pointer">
+        <span nz-icon nzType="tag" nzTheme="outline"></span>
+        <span class="ps-2">Tags</span>
+    </div>
+</div>
