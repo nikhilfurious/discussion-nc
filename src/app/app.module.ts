@@ -17,14 +17,17 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
-import { LatestComponent } from './latest/latest.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { FilterThreadsPipe } from './filter-threads.pipe';
-import { MobileSidenavComponent } from './mobile-sidenav/mobile-sidenav.component';
-import { FilterQuestionTypePipe } from './filter-question-type.pipe';
-import { QuestionDetailComponent } from './question-detail/question-detail.component';
+import { HeaderComponent } from './component/header/header.component';
+// import { FilterQuestionTypePipe } from './filter-question-type.pipe';
+// import { FilterThreadsPipe } from './filter-threads.pipe';
+import { QuestionDetailComponent } from './component/question-detail/question-detail.component';
+import { SidenavComponent } from './component/sidenav/sidenav.component';
+import { MobileSidenavComponent } from './component/mobile-sidenav/mobile-sidenav.component';
+import { HomeComponent } from './component/home/home.component';
+import { LatestComponent } from './component/latest/latest.component';
+import { FilterQuestionTypePipe } from './services/filter-question-type.pipe';
+import { FilterThreadsPipe } from './services/filter-threads.pipe';
+
 
 
 registerLocaleData(en);
@@ -42,7 +45,7 @@ registerLocaleData(en);
     QuestionDetailComponent
   ],
   imports: [
-    // AngularEditorModule,
+
     ReactiveFormsModule ,
     BrowserModule,
     AppRoutingModule,

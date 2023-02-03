@@ -1,0 +1,17 @@
+[
+    {
+        "question": "How to add routing in Angular?",
+        "name": "Jenny",
+        "ans_count": 23
+    },
+    {
+        "question": "How to add routing in React?",
+        "name": "Joey",
+        "ans_count": 22
+    },
+    {
+        "question": "How to add routing in VueJs?",
+        "name": "Fanny",
+        "ans_count": 21
+    }
+]
